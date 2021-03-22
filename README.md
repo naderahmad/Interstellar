@@ -1,8 +1,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This is my first personal project, with which I wanted to learn and improve. This design is based on the concept of Nikolaj Høy.
 
 ### Built With
