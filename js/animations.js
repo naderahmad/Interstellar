@@ -8,13 +8,15 @@ var infoMovie = document.querySelector('.infoMovie'),
     trailer = document.querySelector('.trailer'),
     video = document.getElementById('trailerVideo'),
     transition = document.querySelector('.transition'),
-    footer = document.querySelector('.footer');
+    info = document.querySelector('h4'),
+    footer = document.querySelector('.footer'),
 
     function animation() {
         infoMovie.classList.add('slide-top');
-        titleMovie.classList.add("text-blur-out", "slide-bottom");
+        titleMovie.classList.add("text-blur-out");
         navigation.classList.add('fade-out');
         buttons.classList.add('fade-out');
+        info.classList.add('fade-out');
         footer.classList.add('fade-out');
         search.classList.add('fade-out');
         logo.classList.add('fade-out');
@@ -23,10 +25,8 @@ var infoMovie = document.querySelector('.infoMovie'),
 
         setTimeout(function(){
             document.getElementById("trailerVideo").play();
-        }, 3000);
-        
+        }, 3000);     
     };
-
     function animationOut() {
         video.pause();
         video.currentTime = 0;
@@ -36,14 +36,15 @@ var infoMovie = document.querySelector('.infoMovie'),
         buttons.classList.remove('fade-out');
         footer.classList.remove('fade-out');
         search.classList.remove('fade-out');
+        info.classList.remove('fade-out');
         logo.classList.remove('fade-out');
         trailer.classList.remove('active');
         trailer.classList.remove('transition');
-
         titleMovie.classList.add("puff-in-center");
         navigation.classList.add('fade-in');
         buttons.classList.add('fade-in');
         footer.classList.add('fade-in');
+        info.classList.add('fade-in');
         search.classList.add('fade-in');
         logo.classList.add('fade-in');
         infoMovie.classList.add('slide-bottom');
@@ -53,9 +54,17 @@ var infoMovie = document.querySelector('.infoMovie'),
             navigation.classList.remove('fade-in');
             buttons.classList.remove('fade-in');
             footer.classList.remove('fade-in');
+            info.classList.remove('fade-in');
             search.classList.remove('fade-in');
             logo.classList.remove('fade-in');
             infoMovie.classList.remove('slide-bottom');
         }, 1000);
-
     };
+    function toggleMenu() {
+        var menuToggle = document.querySelector('.toggle');
+        var navigation = document.querySelector('.navigation');
+        var search = document.querySelector('.search');
+        menuToggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+        search.classList.toggle('active');
+      };
